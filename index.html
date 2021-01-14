@@ -5,35 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpearJin's Portfolio</title>
 
+    <!-- 검색햇을때 보이는 설명 -->
     <meta
-      name="descri ption"
+      name="description"
       content="Portfolio for world-renowned software engineer SpearJin"
     />
-    <!-- 검색햇을때 보이는 설명 -->
 
-    <meta name="author" content="SpearJin" />
     <!-- 저자가 누구인지 표시 -->
+    <meta name="author" content="SpearJin" />
 
-    <link rel="icon" type="image/png" href="imgs/favicon.png" />
     <!-- 웹페이지 위에 표시되는 아이콘 -->
+    <link rel="icon" type="image/png" href="imgs/favicon.png" />
 
+    <!-- fontawesome홈페이지에서 Font Awesome CDN에서 코드를 가져온다 -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
-    <!-- fontawesome홈페이지에서 Font Awesome CDN에서 코드를 가져온다 -->
 
+    <!-- GoogleFont에서 글씨체를 가져옴 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- GoogleFont에서 글씨체를 가져옴 -->
 
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
+
     <!-- defer: HTML파일이 pursuing되는동안 자바스크립트 파일을 동시에 다운받고, HTML이 완전 pursuing된 다음에 자바스크립트를 실행하기 때문에 유용하다 -->
+    <script src="main.js" defer></script>
   </head>
-  <body></body>
+
+  <body>
+    <!-- Navabar -->
+    <nav id="navbar">
+      <div class="navbar__logo">
+        <img src="./imgs/favicon.png" alt="" />
+        <a href="#">SpearJin</a>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item">Home</li>
+        <li class="navbar__menu__item">About</li>
+        <li class="navbar__menu__item">Skills</li>
+        <li class="navbar__menu__item">My work</li>
+        <li class="navbar__menu__item">Testimonials</li>
+        <li class="navbar__menu__item">Contact</li>
+      </ul>
+    </nav>
+    <!-- About -->
+    <section id="about"></section>
+    <!-- Skills -->
+    <section id="skills"></section>
+    <!-- Work -->
+    <section id="work"></section>
+    <!-- Testimonials -->
+    <section id="testimonials"></section>
+    <!-- Contact -->
+    <section id="contact"></section>
+  </body>
 </html>
