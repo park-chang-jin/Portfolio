@@ -92,6 +92,13 @@ p {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo > img {
+  width: 70px;
+  height: 60px;
 }
 
 .navbar__menu {
