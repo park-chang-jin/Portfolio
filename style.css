@@ -7,7 +7,9 @@
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
   --color-black: #4d4d4d;
+  --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
+  --color-light-grey: #7c7979;
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
@@ -27,6 +29,9 @@
 
   /* Size */
   --size-border-radius: 4px;
+
+  /* Annimation */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags */
@@ -133,15 +138,15 @@ p {
 /* Home */
 #home {
   background: url("imgs/home-background.png") center/cover no-repeat;
-  padding: 40px;
   text-align: center;
+  padding: 48px;
 }
 
 .home__avatar {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  border: 2px solid var(--color-light-white);
+  border: 2px solid var(--color-white);
 }
 
 .home__title,
@@ -152,9 +157,76 @@ p {
 .home__contact {
   color: var(--color-white);
   font-size: var(--font-regular);
-  font-weight: var(--size-border-radius);
+  font-weight: var(--weight-regular);
   margin: 24px;
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+/* Section commmon */
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  color: blue;
+  border: 1px solid var(--color-blue);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i {
+  transition: all var(--animation-duration) ease;
+}
+.major__icon:hover i {
+  color: var(--color-pink);
+  transform: rotate(-30deg) scale(1.1);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__desciption {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
