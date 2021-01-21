@@ -15,7 +15,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// ***Handle scrolling when tapping on the navbar menu ***
+// *** Handle scrolling when tapping on the navbar menu ***
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   console.log(event.target.dataset.link); // html에 있는  data-link에 값이 나옴
@@ -24,7 +24,16 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return; //link가 아닌 다른 부분 클릭 햇을때 반환
   }
-
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: "smooth" }); //scrollIntoView:해당 element로 이동, behavior: "smooth": 부드럽게 그 위치고 가게 해줌
+  scrollIntoView(link);
 });
+
+// *** Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector(".home__contact");
+homeContactBtn.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" }); //scrollIntoView:해당 element로 이동, behavior: "smooth": 부드럽게 그 위치고 가게 해줌
+}
