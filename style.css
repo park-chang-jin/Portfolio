@@ -183,6 +183,9 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home--dark {
+}
+
 /* Section commmon */
 .section {
   padding: 50px;
@@ -363,6 +366,7 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+  z-index: -1;
 }
 
 .project__img {
