@@ -6,8 +6,8 @@ const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height; //getBoundingClientRect()은 브라우저에서 보여지는 width나 height를 가져옴, offsetWidth은 실제 넓이를 가져옴
 // scroll될 때마다 Y축 높이를 불러온다
 document.addEventListener("scroll", () => {
-  console.log(window.scrollY);
-  console.log(`navbarHeight: ${navbarHeight}`);
+  // console.log(window.scrollY);
+  // console.log(`navbarHeight: ${navbarHeight}`);
   if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
   } else {
@@ -56,6 +56,38 @@ arrowUp.addEventListener("click", () => {
   scrollIntoView("#home"); // 점차적으로 스크롤링이 진행 되기 때문에 나중에 비동기화를 해줘야한다. 그리고 스크롤중 마우스 가 움직이면 중간에 멈춘다
 });
 
+// *** Project ***
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  // console.log(filter);
+  if (filter == null) {
+    return;
+  }
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      // console.log(project.dataset.type);
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+}); // anim-out이 먼저 나오거 3초후에 필터링이 되고 anim-out이 제거되는 순서
+
+/* for(let project of projects) {}
+    let project;
+    for(let i = 0; i < projects.length; i++) {
+      project = projects[i];
+    } 이거와같음 */
+
+// *** ScrollIntoView function ***
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" }); //scrollIntoView:해당 element로 이동, behavior: "smooth": 부드럽게 그 위치고 가게 해줌
