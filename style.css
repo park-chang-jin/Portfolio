@@ -183,9 +183,6 @@ p {
   border-radius: var(--size-border-radius);
 }
 
-.home--dark {
-}
-
 /* Section commmon */
 .section {
   padding: 50px;
@@ -355,6 +352,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  z-index: -1;
 }
 
 .project {
@@ -366,7 +364,6 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
-  z-index: -1;
 }
 
 .project__img {
@@ -479,6 +476,27 @@ p {
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-yellow);
+}
+
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* For below 768px screen width */

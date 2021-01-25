@@ -41,6 +41,21 @@ document.addEventListener("scroll", () => {
   homeContainer.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// *** Show "arrow up" button when scrolling down ***
+const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+// *** Handle click ont the "arrow up" button ***
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home"); // 점차적으로 스크롤링이 진행 되기 때문에 나중에 비동기화를 해줘야한다. 그리고 스크롤중 마우스 가 움직이면 중간에 멈춘다
+});
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" }); //scrollIntoView:해당 element로 이동, behavior: "smooth": 부드럽게 그 위치고 가게 해줌
