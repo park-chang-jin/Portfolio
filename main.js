@@ -29,7 +29,7 @@ navbarMenu.addEventListener("click", (event) => {
 });
 
 // *** Navbar toggle button for small screen
-const navbarToggleBtn = document.querySelector(".navbar__toggle-bnt");
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
 navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
 });
@@ -94,7 +94,8 @@ workBtnContainer.addEventListener("click", (event) => {
     });
     projectContainer.classList.remove("anim-out");
   }, 300);
-}); // anim-out이 먼저 나오거 3초후에 필터링이 되고 anim-out이 제거되는 순서
+});
+// anim-out이 먼저 나오거 3초후에 필터링이 되고 anim-out이 제거되는 순서
 
 /* for(let project of projects) {}
     let project;
